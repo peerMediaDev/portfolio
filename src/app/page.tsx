@@ -293,7 +293,7 @@ function LogoShowcase() {
           </div>
 
           {/* Medium items */}
-          {logos.slice(1, 3).map((logo, index) => (
+          {logos.slice(1, 3).map((logo) => (
             <div key={logo.id} className="col-span-1 group">
               {/* 
                 ============================================================
