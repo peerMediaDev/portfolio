@@ -78,13 +78,13 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-zinc-500 text-sm">Email us at</div>
-                  <a href="mailto:hello@peermedia.com" className="text-white font-medium hover:text-blue-500 transition-colors">
-                    hello@peermedia.com
+                  <a href="mailto:support@peermedia.co" className="text-white font-medium hover:text-blue-500 transition-colors">
+                    support@peermedia.co
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center">
                   <Phone className="w-6 h-6 text-blue-500" />
                 </div>
@@ -94,7 +94,7 @@ export default function ContactSection() {
                     +1 (234) 567-890
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center">
@@ -102,7 +102,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-zinc-500 text-sm">Located in</div>
-                  <span className="text-white font-medium">San Francisco, CA</span>
+                  <span className="text-white font-medium">Chehalis, WA</span>
                 </div>
               </div>
             </div>
