@@ -279,7 +279,7 @@ ${safeMessage}
 
     // Optionally send a confirmation email to the client
     await resend.emails.send({
-      from: "PeerMedia <onboarding@resend.dev>", // Using Resend's test domain - change to your verified domain in production
+      from: "PeerMedia <quotes@peermedia.co>", // Using Resend's test domain - change to your verified domain in production
       to: [email], // Use original email for sending
       subject: "We've received your quote request - PeerMedia",
       html: `
