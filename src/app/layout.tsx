@@ -102,6 +102,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#09090b" />
+        <link rel="canonical" href="https://peermedia.co" />
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

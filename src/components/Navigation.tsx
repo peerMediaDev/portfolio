@@ -8,10 +8,11 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
-    { name: "Our Software", href: "#software" },
-    { name: "Contact", href: "#contact" },
+    { name: "Work", href: "/#work" },
+    { name: "Services", href: "/#services" },
+    { name: "Our Software", href: "/#software" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -19,7 +20,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <Image 
               src="/logo.png" 
               alt="PeerMedia logo - creative digital agency specializing in web development and branding" 
@@ -48,7 +49,7 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/25"
             >
               Get a Quote
@@ -81,7 +82,7 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 mt-2"
               >
