@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,17 +20,15 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            {/* 
-              ============================================================
-              [LOGO PLACEHOLDER] - Replace with your company logo
-              Example: <Image src="/logo.svg" alt="Company Logo" width={40} height={40} />
-              ============================================================
-            */}
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
+            <Image 
+              src="/logo.png" 
+              alt="PeerMedia logo - creative digital agency specializing in web development and branding" 
+              width={60} 
+              height={60} 
+              className="rounded-[5px] group-hover:scale-105 transition-transform duration-300"
+            />
             <span className="text-xl font-bold text-white hidden sm:block">
-              Peer<span className="text-blue-500">Media</span>
+              Peer <span style={{ color: "#3c78f0" }}>Media</span>
             </span>
           </a>
 

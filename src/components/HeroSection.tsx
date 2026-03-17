@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/hero_section.png"
-          alt="PeerMedia Hero"
+          alt="PeerMedia creative digital agency - modern web design and branding services hero image"
           fill
           className="object-cover object-center"
           priority
