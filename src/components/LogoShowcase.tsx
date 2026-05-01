@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface Logo {
   id: number;
@@ -12,6 +13,7 @@ interface Logo {
   details: string;
   services: string[];
   year: string;
+  image?: string;
 }
 
 export default function LogoShowcase() {
@@ -26,7 +28,8 @@ export default function LogoShowcase() {
       initials: "FC",
       details: "Complete brand identity for a local artisan coffee roaster, focusing on warmth and craftsmanship.",
       services: ["Logo Design", "Sticker Design", "Brand Guidelines", "Packaging Design"],
-      year: "2024"
+      year: "2024",
+      image: "/logos/fiddlers-coffee.jpg"
     },
     { 
       id: 2, 
@@ -109,14 +112,23 @@ export default function LogoShowcase() {
             */}
             <div className="relative h-full min-h-[300px] lg:min-h-[400px] bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden transition-all duration-500 hover:border-blue-600/50 hover:shadow-2xl hover:shadow-blue-600/10">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex items-center justify-center h-full p-8">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-500">
-                    <span className="text-4xl font-bold text-blue-500">{logos[0].initials}</span>
+              {logos[0].image ? (
+                <Image
+                  src={logos[0].image}
+                  alt={logos[0].name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full p-8">
+                  <div className="text-center">
+                    <div className="w-32 h-32 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-500">
+                      <span className="text-4xl font-bold text-blue-500">{logos[0].initials}</span>
+                    </div>
+                    <p className="text-zinc-600 text-sm">Click to view details</p>
                   </div>
-                  <p className="text-zinc-600 text-sm">Click to view details</p>
                 </div>
-              </div>
+              )}
               {/* Hover overlay */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                 <h3 className="text-white font-bold text-lg">{logos[0].name}</h3>
@@ -226,17 +238,20 @@ export default function LogoShowcase() {
             </button>
 
             {/* Top half - Logo Display */}
-            {/* 
-              ============================================================
-              [MODAL IMAGE PLACEHOLDER] - Replace with actual logo image
-              Example: <Image src={`/logos/${selectedLogo.id}.png`} alt={selectedLogo.name} fill className="object-contain p-8" />
-              ============================================================
-            */}
-            <div className="relative h-48 sm:h-56 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
+            <div className="relative h-48 sm:h-64 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent" />
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 bg-zinc-800 rounded-2xl flex items-center justify-center border border-zinc-700">
-                <span className="text-4xl sm:text-5xl font-bold text-blue-500">{selectedLogo.initials}</span>
-              </div>
+              {selectedLogo.image ? (
+                <Image
+                  src={selectedLogo.image}
+                  alt={`${selectedLogo.name} logo design by PeerMedia`}
+                  fill
+                  className="object-contain p-4"
+                />
+              ) : (
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 bg-zinc-800 rounded-2xl flex items-center justify-center border border-zinc-700">
+                  <span className="text-4xl sm:text-5xl font-bold text-blue-500">{selectedLogo.initials}</span>
+                </div>
+              )}
             </div>
 
             {/* Bottom half - Info */}
